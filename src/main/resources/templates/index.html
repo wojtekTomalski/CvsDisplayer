@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Matches</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<table class="table">
+    <thead class="table-dark">
+    <tr>
+        <th>Round</th>
+        <th>Date</th>
+        <th>Team One</th>
+        <th>FT</th>
+        <th>Team Two</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="match : ${matches}">
+        <td th:text="${match.getRound()}"></td>
+        <td th:text="${match.getDate()}"></td>
+        <td th:text="${match.getTeam1()}">0</td>
+        <td th:text="${match.getFt()}">0</td>
+        <td th:text="${match.getTeam2()}">0</td>
+    </tr>
+    </tbody>
+</table>
+<body>
+
+</body>
+
+</html>
